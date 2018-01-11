@@ -2,7 +2,7 @@ class BookAuthorsController < ApplicationController
   before_action :load_book_author, except: [:index, :new, :create]
 
   def index
-    @book_authors = BookAuthor.info_book_author.order(id: :asc).
+    @book_authors = BookAuthor.infor_book_author.order(id: :asc).
       page(params[:page]).per(Settings.perpage)
   end
 

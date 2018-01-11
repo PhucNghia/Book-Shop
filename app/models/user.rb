@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :orders
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
@@ -9,6 +11,6 @@ class User < ApplicationRecord
   validates :address, length: {maximum: Settings.size_address}, presence: true
   enum role: [:guest, :admin]
 
-  scope :info_user, ->{select :id, :name, :email, :phone, :address, :role}
+  scope :infor_user, ->{select :id, :name, :email, :phone, :address, :role}
 
 end

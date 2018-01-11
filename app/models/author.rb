@@ -4,5 +4,5 @@ class Author < ApplicationRecord
 
   validates :name, length: {maximum: Settings.size_name}, presence: true
 
-  scope :info_author, ->{select(:id, :name)}
+  scope :infor_author, ->{select :id, :name}
 end
